@@ -558,18 +558,8 @@
         "placement": {
           "type": "object",
           "properties": {
-            "constraints": {"type": "array", "items": {"type": "string"}},
-            "preferences": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "spread": {"type": "string"}
-                },
-                "additionalProperties": false,
-                "patternProperties": {"^x-": {}}
-              }
-            },
+            "constraints": {"$ref": "#/definitions/list_or_dict"},
+            "preferences": {"$ref": "#/definitions/list_or_dict"},
             "max_replicas_per_node": {"type": "integer"}
           },
           "additionalProperties": false,
